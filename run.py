@@ -26,7 +26,7 @@ def play(word):
     """
     Promts for the user to input a letter and returns whether 
     the letter is in the word or not, if it is then it adds the letter
-    to the word, if the word is completed then the game is ended
+    to the word, if the word is completed then the winning/losing message is shown
     """
     while not end_game and lives >= 0:
         guess = input("Please try a letter").upper()
@@ -53,5 +53,81 @@ def play(word):
             print(f"{guess} is an invalid answer. Try again.")
         print(display_hangman(lives))
         print("Guess this word: " + " ".join(secret_word) + "\n")
+    if end_game:
+        print("Congratulaions! You guessed the word, you've won!")
+    else:
+        print("Sorry you've ran out of lives. Better luck next time!")
 
-play(word)
+def display_hangman(lives):
+    stages = [  # final state: head, torso, both arms, and both legs
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / \\
+                   -
+                """,
+                # head, torso, both arms, and one leg
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / 
+                   -
+                """,
+                # head, torso, and both arms
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |      
+                   -
+                """,
+                # head, torso, and one arm
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
+                   -
+                """,
+                # head and torso
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                # head
+                """
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                # initial empty state
+                """
+                   --------
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
+    ]
+    return stages[lives]
