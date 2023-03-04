@@ -21,6 +21,7 @@ def play(word):
     lives = 6
     print("Let's play Hangman!")
     print(display_hangman(lives))
+    print(f"Lives: {lives}\n")
     print("Guess this word: " + " ".join(secret_word) + "\n")
     print("\n")
     """
@@ -53,6 +54,7 @@ def play(word):
         else:
             print(f"{guess} is an invalid answer. Try again.")
         print(display_hangman(lives))
+        print(f"Lives left: {lives}\n")
         print("Guess this word: " + " ".join(secret_word) + "\n")
     if end_game:
         print("Congratulaions! You guessed the word, you've won!")
