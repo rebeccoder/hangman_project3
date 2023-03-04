@@ -13,9 +13,8 @@ word = new_word()
 
 def play(word):
     """
-    Starts the game, displays the secret word, the picture of the hangman and the amount of lives.
+    Starts the game, displays the secret word, the picture of the hangman and amount of lives.
     """
-
     secret_word = "_" * len(word)
     end_game = False
     guessed_letters = []
@@ -38,13 +37,17 @@ def play(word):
                 print(f"Uh oh{guess} is not in the word!")
                 lives -= 1
                 guessed_letters.append(guess)
-        else:
-            print(f"{guess} is in the word! Well done!")
-            guessed_letters.append(guess)
-            word_as_list = list(secret_word)
-            indices = [i for i, letter in enumerate(word) if letter == guess]
-            for index in indices:
-                word_as_list[index] = guess
-            secret_word = "".join(word_as_list)
-            if "_" not in secret_word:
-                end_game = True
+            else:
+                print(f"{guess} is in the word! Well done!")
+                guessed_letters.append(guess)
+                word_as_list = list(secret_word)
+                indices = [i for i, letter in enumerate(word) if letter == guess]
+                for index in indices:
+                    word_as_list[index] = guess
+                secret_word = "".join(word_as_list)
+                if "_" not in secret_word:
+                    end_game = True
+        
+
+
+play(word)
