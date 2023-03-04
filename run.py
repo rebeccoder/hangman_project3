@@ -47,7 +47,11 @@ def play(word):
                 secret_word = "".join(word_as_list)
                 if "_" not in secret_word:
                     end_game = True
-        
-
+        elif len(guess) != 1:
+            print(f"You entered {len(guess)} letters.. You can only enter 1 letter at a time!")
+        else:
+            print(f"{guess} is an invalid answer. Try again.")
+        print(display_hangman(lives))
+        print("Guess this word: " + " ".join(secret_word) + "\n")
 
 play(word)
