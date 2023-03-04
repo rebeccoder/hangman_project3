@@ -59,6 +59,9 @@ def play(word):
         print("Sorry you've ran out of lives. Better luck next time!")
 
 def display_hangman(lives):
+    """
+    copied and pasted from youtube code credited in the README
+    """
     stages = [  # final state: head, torso, both arms, and both legs
                 """
                    --------
