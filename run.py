@@ -29,15 +29,11 @@ def play(word):
     to the word, if the word is completed then the winning/losing message is shown
     """
     while not end_game and lives >= 0:
-        guess = input("Please try a letter").upper()
+        guess = input("Please try a letter ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You have already tried the letter {guess}!")
             elif guess in word:
-                print(f"Uh oh{guess} is not in the word!")
-                lives -= 1
-                guessed_letters.append(guess)
-            else:
                 print(f"{guess} is in the word! Well done!")
                 guessed_letters.append(guess)
                 word_as_list = list(secret_word)
@@ -47,6 +43,11 @@ def play(word):
                 secret_word = "".join(word_as_list)
                 if "_" not in secret_word:
                     end_game = True
+            else:
+                print(f"Uh oh {guess} is not in the word!")
+                lives -= 1
+                guessed_letters.append(guess)
+
         elif len(guess) != 1:
             print(f"You entered {len(guess)} letters.. You can only enter 1 letter at a time!")
         else:
@@ -134,3 +135,12 @@ def display_hangman(lives):
                 """
     ]
     return stages[lives]
+
+def main():
+    word = new_word()
+    play(word)
+    while input("Play Again? (Y/N) ").upper() == "Y":
+        word = new_word()
+        play(word)
+
+main()
