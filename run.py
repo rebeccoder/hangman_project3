@@ -21,6 +21,10 @@ def new_word():
 word = new_word()
 
 def title_page():
+    """ 
+    Introduces the player to the game.
+    Gives them 3 options, to start the game, read instructions or exit
+    """
     clear_terminal()
     print("LET'S PLAY HANGMAN")
     print(display_hangman(0))
