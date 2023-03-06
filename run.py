@@ -1,4 +1,6 @@
 import random
+import sys
+import os
 
 def clear_terminal():
     """
@@ -18,6 +20,25 @@ def new_word():
 
 word = new_word()
 
+def title_page():
+    clear_terminal()
+    print("LET'S PLAY HANGMAN")
+    print(display_hangman(0))
+    print("Type 1: To play Game")
+    print("Type 2: For instructions")
+    print("Type 3: To exit")
+
+    while True:
+        title_page_option = input("  " * 10 + "Please choose an option: ")
+        if title_page_option == "1":
+            play(word)
+        elif title_page_option == "2":
+            print(instructions)
+        elif title_page_option == "3":
+            clear_terminal()
+            sys.exit()
+        else:
+            print("Please choose option 1, 2 or 3")
 
 def play(word):
     """
@@ -150,6 +171,9 @@ def display_hangman(lives):
     ]
     return stages[lives]
 
+title_page()
+
+"""
 def main():
     word = new_word()
     play(word)
@@ -158,3 +182,4 @@ def main():
         play(word)
 
 main()
+"""
