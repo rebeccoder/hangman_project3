@@ -29,7 +29,7 @@ def play(word):
     the letter is in the word or not, if it is then it adds the letter
     to the word, if the word is completed then the winning/losing message is shown
     """
-    while not end_game and lives >= 0:
+    while not end_game and lives > 0:
         guess = input("Please try a letter ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
