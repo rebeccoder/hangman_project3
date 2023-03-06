@@ -1,5 +1,12 @@
 import random
 
+def clear_terminal():
+    """
+    Clears the terminal and code sourced from:
+    http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def new_word():
     """
     Randomly selects a word from words.txt file for each round
@@ -10,6 +17,7 @@ def new_word():
     return random_word
 
 word = new_word()
+
 
 def play(word):
     """
