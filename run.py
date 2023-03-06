@@ -60,6 +60,7 @@ def play(word):
         print("Congratulaions! You guessed the word, you've won!")
     else:
         print("Sorry you've ran out of lives. Better luck next time!")
+        print(f"The word you were looking for was: {word}")
 
 def display_hangman(lives):
     """
