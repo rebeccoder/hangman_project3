@@ -56,11 +56,13 @@ def play(word):
         print(display_hangman(lives))
         print(f"Lives left: {lives}\n")
         print("Guess this word: " + " ".join(secret_word) + "\n")
+        print("Letters tried: " + ", ".join(guessed_letters) + "\n")
     if end_game:
         print("Congratulaions! You guessed the word, you've won!")
     else:
         print("Sorry you've ran out of lives. Better luck next time!")
         print(f"The word you were looking for was: {word}")
+
 
 def display_hangman(lives):
     """
