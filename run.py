@@ -200,7 +200,7 @@ def display_hangman(lives):
     return stages[lives]
 
 def title_art():
-    print("""
+    print("""\033[1;32m
  _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
@@ -209,7 +209,7 @@ def title_art():
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                     __/ |                      
                    |___/                       
-    """)
+ """)
 
 
 def winner_art():
@@ -231,4 +231,5 @@ def game_over_art():
  \____/_/   \_\_|  |_|_____|  \___/  \_/  |_____|_| \_\ 
                                                        
     """)
+
 title_page()
