@@ -98,7 +98,7 @@ def play(word):
         print("Congratulaions! You guessed the word, you've won!")
         while input("Play Again? (Y/N) ").upper() == "Y":
             if True:
-                # clear_terminal()"""
+                clear_terminal()
                 word = new_word()
                 play(word)
             else:
@@ -117,14 +117,6 @@ def play(word):
                 title_page()
             else:
                 continue
-        # while input("Play Again? (Y/N) ").upper() == "Y":
-        #     if True:
-        #         # clear_terminal()
-        #         word = new_word()
-        #         play(word)
-        #     else:
-        #         title_page()
-
     
 
 def display_hangman(lives):
@@ -207,17 +199,3 @@ def display_hangman(lives):
 
 
 title_page()
-"""
-def main():
-    title_page()
-    word = new_word()
-    play(word)
-    while input("Play Again? (Y/N) ").upper() == "Y":
-        if True:
-            word = new_word()
-            play(word)
-        else:
-            title_page()
-
-main()
-"""
