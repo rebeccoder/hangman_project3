@@ -36,13 +36,17 @@ def title_page():
         title_page_option = input("Please choose option 1,2 or 3 and press enter: ")
         if title_page_option == "1":
             play(word)
+            break
         elif title_page_option == "2":
             print(instructions)
+            continue
         elif title_page_option == "3":
             clear_terminal()
             sys.exit()
+            break
         else:
             print("Please choose option 1, 2 or 3")
+            continue
 
 def play(word):
     """
@@ -94,7 +98,7 @@ def play(word):
         print("Congratulaions! You guessed the word, you've won!")
         while input("Play Again? (Y/N) ").upper() == "Y":
             if True:
-                clear_terminal()
+                # clear_terminal()"""
                 word = new_word()
                 play(word)
             else:
@@ -102,13 +106,24 @@ def play(word):
     else:
         print("Sorry you've ran out of lives. Better luck next time!")
         print(f"The word you were looking for was: {word}")
-        while input("Play Again? (Y/N) ").upper() == "Y":
-            if True:
+        while True:
+            play_again = input("Play Again? (Y/N)")
+
+            if play_again.upper() == 'Y':
                 clear_terminal()
                 word = new_word()
                 play(word)
-            else:
+            elif play_again.upper() == 'N':
                 title_page()
+            else:
+                continue
+        # while input("Play Again? (Y/N) ").upper() == "Y":
+        #     if True:
+        #         # clear_terminal()
+        #         word = new_word()
+        #         play(word)
+        #     else:
+        #         title_page()
 
     
 
