@@ -33,7 +33,7 @@ def title_page():
     print("Type 3: To exit")
 
     while True:
-        title_page_option = input("  " * 10 + "Please choose an option: ")
+        title_page_option = input("Please choose option 1,2 or 3 and press enter: ")
         if title_page_option == "1":
             play(word)
         elif title_page_option == "2":
@@ -63,7 +63,7 @@ def play(word):
     to the word, if the word is completed then the winning/losing message is shown
     """
     while not end_game and lives > 0:
-        guess = input("Please type a letter and then press enter ").upper()
+        guess = input("Please type a letter and then press enter: ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You have already tried the letter {guess}!")
@@ -175,15 +175,14 @@ def display_hangman(lives):
     ]
     return stages[lives]
 
-title_page()
 
-"""
 def main():
+    title_page()
     word = new_word()
     play(word)
     while input("Play Again? (Y/N) ").upper() == "Y":
         word = new_word()
         play(word)
 
+
 main()
-"""
