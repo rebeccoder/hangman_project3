@@ -26,7 +26,7 @@ def title_page():
     Gives them 3 options, to start the game, read instructions or exit
     """
     clear_terminal()
-    print("LET'S PLAY HANGMAN")
+    title_art()
     print(display_hangman(0))
     print("Type 1: To play Game")
     print("Type 2: For instructions")
@@ -197,5 +197,16 @@ def display_hangman(lives):
     ]
     return stages[lives]
 
+def title_art():
+    print("""
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/                       
+    """)
 
 title_page()
