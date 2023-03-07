@@ -95,6 +95,7 @@ def play(word):
         print("Guess this word: " + " ".join(secret_word) + "\n")
         print("Letters tried: " + ", ".join(guessed_letters) + "\n")
     if end_game:
+        winner_art()
         print("Congratulaions! You guessed the word, you've won!")
         while input("Play Again? (Y/N) ").upper() == "Y":
             if True:
@@ -209,4 +210,14 @@ def title_art():
                    |___/                       
     """)
 
+
+def winner_art():
+    print("""
+__        _____ _   _ _   _ _____ ____  
+\ \      / /_ _| \ | | \ | | ____|  _ \ 
+ \ \ /\ / / | ||  \| |  \| |  _| | |_) |
+  \ V  V /  | || |\  | |\  | |___|  _ < 
+   \_/\_/  |___|_| \_|_| \_|_____|_| \_\ 
+                                        
+    """)
 title_page()
