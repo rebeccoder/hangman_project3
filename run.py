@@ -105,6 +105,7 @@ def play(word):
             else:
                 title_page()
     else:
+        game_over_art()
         print("Sorry you've ran out of lives. Better luck next time!")
         print(f"The word you were looking for was: {word}")
         while True:
@@ -219,5 +220,15 @@ __        _____ _   _ _   _ _____ ____
   \ V  V /  | || |\  | |\  | |___|  _ < 
    \_/\_/  |___|_| \_|_| \_|_____|_| \_\ 
                                         
+    """)
+
+def game_over_art():
+    print("""
+  ____    _    __  __ _____    _____     _______ ____  
+ / ___|  / \  |  \/  | ____|  / _ \ \   / / ____|  _ \ 
+| |  _  / _ \ | |\/| |  _|   | | | \ \ / /|  _| | |_) |
+| |_| |/ ___ \| |  | | |___  | |_| |\ V / | |___|  _ < 
+ \____/_/   \_\_|  |_|_____|  \___/  \_/  |_____|_| \_\ 
+                                                       
     """)
 title_page()
