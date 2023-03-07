@@ -38,7 +38,7 @@ def title_page():
             play(word)
             break
         elif title_page_option == "2":
-            print(instructions)
+            instructions_page()
             continue
         elif title_page_option == "3":
             clear_terminal()
@@ -47,6 +47,18 @@ def title_page():
         else:
             print("Please choose option 1, 2 or 3")
             continue
+
+def instructions_page():
+    """ 
+    Displays instructions for the user to understand the game
+    """
+    print(
+        """
+        Try t
+        """
+    )
+
+
 
 def play(word):
     """
@@ -200,7 +212,8 @@ def display_hangman(lives):
     return stages[lives]
 
 def title_art():
-    print("""\033[1;32m
+    #ANSI code for bright green
+    print("""\033[1;32m 
  _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
