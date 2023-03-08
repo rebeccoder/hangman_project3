@@ -53,6 +53,7 @@ def instructions_page():
     Displays instructions for the user to understand the game
     """
     clear_terminal()
+    instructions_art()
     print(
         """
         Start the game by typing 1 and pressing enter on the homepage.
@@ -75,6 +76,7 @@ def play(word):
     """
     Starts the game, displays the secret word, the picture of the hangman and amount of lives.
     """
+    clear_terminal()
     secret_word = "_" * len(word)
     end_game = False
     guessed_letters = []
@@ -118,6 +120,7 @@ def play(word):
         print("Guess this word: " + " ".join(secret_word) + "\n")
         print("Letters tried: " + ", ".join(guessed_letters) + "\n")
     if end_game:
+        clear_terminal()
         winner_art()
         print("Congratulaions! You guessed the word, you've won!")
         while input("Play Again? (Y/N) ").upper() == "Y":
@@ -128,6 +131,8 @@ def play(word):
             else:
                 title_page()
     else:
+        clear_terminal()
+        print(display_hangman(0))
         game_over_art()
         print("Sorry you've ran out of lives. Better luck next time!")
         print(f"The word you were looking for was: {word}")
@@ -254,6 +259,13 @@ def game_over_art():
 | |_| |/ ___ \| |  | | |___  | |_| |\ V / | |___|  _ < 
  \____/_/   \_\_|  |_|_____|  \___/  \_/  |_____|_| \_\ 
                                                        
+    """)
+
+def instructions_art():
+    print("""
+    
+█ █▄░█ █▀ ▀█▀ █▀█ █░█ █▀▀ ▀█▀ █ █▀█ █▄░█ █▀
+█ █░▀█ ▄█ ░█░ █▀▄ █▄█ █▄▄ ░█░ █ █▄█ █░▀█ ▄█
     """)
 
 title_page()
