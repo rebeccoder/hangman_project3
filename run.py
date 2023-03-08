@@ -121,6 +121,7 @@ def play(word):
         print("Letters tried: " + ", ".join(guessed_letters) + "\n")
     if end_game:
         clear_terminal()
+        dancing_stickman()
         winner_art()
         print("Congratulaions! You guessed the word, you've won!")
         while input("Play Again? (Y/N) ").upper() == "Y":
@@ -226,6 +227,14 @@ def display_hangman(lives):
                 """
     ]
     return stages[lives]
+
+def dancing_stickman():
+    print("""
+                        7_O_/           
+                         (/ 
+                         /\/' 
+                         7   
+    """)
 
 def title_art():
     #ANSI code for bright green
