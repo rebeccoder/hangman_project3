@@ -52,11 +52,22 @@ def instructions_page():
     """ 
     Displays instructions for the user to understand the game
     """
+    clear_terminal()
     print(
         """
-        Try t
+        Start the game by typing 1 and pressing enter on the homepage.
+        A hidden word will appear indicating how many letters are in the word.
+        Try to guess the word you can only guess one letter at a time.
+        Every letter you get wrong will cost you one of your six lives
+        and the hanging will commence.
+        Once you run out of life the poor man will be hanged!
+        Only you can save him by guesing the right word before your lives reach 0.
+        GOOD LUCK!
         """
     )
+
+    start = input("Press the enter key to return to the title page.\n")
+    title_page()
 
 
 
