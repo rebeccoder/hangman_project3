@@ -138,14 +138,14 @@ def play(word):
         clear_terminal()
         dancing_stickman()
         winner_art()
-        print("Congratulaions! You guessed the word, you've won!")
+        print ( f"Congratulaions! You won! You guessed the word {guess} and saved that man!")
         play_again()
 
     else:
         clear_terminal()
         print(display_hangman(0))
         game_over_art()
-        print("Sorry you've ran out of lives. Better luck next time!")
+        print("Uh Oh! You lost! Wouldn't want to be that guy... Better luck next time!")
         print(f"The word you were looking for was: {word}")
         play_again()
     
