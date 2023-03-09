@@ -28,12 +28,12 @@ def title_page():
     clear_terminal()
     title_art()
     print(display_hangman(0))
-    print("Type 1: To play Game")
-    print("Type 2: For instructions")
-    print("Type 3: To exit")
+    print("Type 1: To Play Game")
+    print("Type 2: For Instructions")
+    print("Type 3: To Exit")
 
     while True:
-        title_page_option = input("Please choose option 1,2 or 3 and press enter: ")
+        title_page_option = input("Please Choose Option 1,2 or 3 and Press Enter: ")
         if title_page_option == "1":
             play(word)
             break
@@ -45,7 +45,7 @@ def title_page():
             sys.exit()
             break
         else:
-            print("Please choose option 1, 2 or 3")
+            print("Please Choose Option 1, 2 or 3")
             break
 
 def instructions_page():
@@ -76,7 +76,7 @@ def play_again():
     if the user wants to play again by entering Y or N
     """
     while True:
-        play_again_answer = input("Play Again? (Y/N)")
+        play_again_answer = input("Play Again? (Y/N): ")
         if play_again_answer.upper() == 'Y':
             clear_terminal()
             word = new_word()
