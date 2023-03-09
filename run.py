@@ -46,7 +46,7 @@ def title_page():
             break
         else:
             print("Please choose option 1, 2 or 3")
-            continue
+            break
 
 def instructions_page():
     """ 
@@ -70,6 +70,21 @@ def instructions_page():
     start = input("Press the enter key to return to the title page.\n")
     title_page()
 
+def play_again():
+    """
+    This function is called at the end of the game to see
+    if the user wants to play again by entering Y or N
+    """
+    while True:
+        play_again_answer = input("Play Again? (Y/N)")
+        if play_again_answer.upper() == 'Y':
+            clear_terminal()
+            word = new_word()
+            play(word)
+        elif play_again_answer.upper() == 'N':
+            title_page()
+        else:
+            continue
 
 
 def play(word):
@@ -124,30 +139,15 @@ def play(word):
         dancing_stickman()
         winner_art()
         print("Congratulaions! You guessed the word, you've won!")
-        while input("Play Again? (Y/N) ").upper() == "Y":
-            if True:
-                clear_terminal()
-                word = new_word()
-                play(word)
-            else:
-                title_page()
+        play_again()
+
     else:
         clear_terminal()
         print(display_hangman(0))
         game_over_art()
         print("Sorry you've ran out of lives. Better luck next time!")
         print(f"The word you were looking for was: {word}")
-        while True:
-            play_again = input("Play Again? (Y/N)")
-
-            if play_again.upper() == 'Y':
-                clear_terminal()
-                word = new_word()
-                play(word)
-            elif play_again.upper() == 'N':
-                title_page()
-            else:
-                continue
+        play_again()
     
 
 def display_hangman(lives):
