@@ -138,7 +138,7 @@ def play(word):
         clear_terminal()
         dancing_stickman()
         winner_art()
-        print ( f"Congratulaions! You won! You guessed the word {guess} and saved that man!")
+        print ( f"Congratulaions! You won! You guessed the word {word} and saved that man!")
         play_again()
 
     else:
