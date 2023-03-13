@@ -35,4 +35,16 @@ appears or being directed the losing screen if they run out of lives before they
       - Make the game fun, quick, yet challenging
       - Ensure the game is easy and intuitive to use
 
+### Scope
 
+Based on objectives and user stories.
+
+#### Requirements
+     - Give clear and digestable instructions
+     - Allow the game to run through without needing to refresh or leave the page
+     - Ensure there's a new word with every new game
+
+### Structure
+
+The game is ran through a python terminal on a webpage. It's deployed using Heroku which is connected to GitHub.
+The user only needs to enter single characters followed by the Enter key.
