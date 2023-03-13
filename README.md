@@ -1,31 +1,27 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# HANGMAN
 
-Welcome rebeccoder,
+## Introduction
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+For my 3rd Portfolio Project for the Code Institute I have chosen to make a classic Hangman game.
+It's a Python terminal game that runs through the Code Institute terminal on Heroku.
 
-## Reminders
+Users will be greated with a Title page which will provide 3 options - to play the game, read instructions or to end the game. 
+It is a single player game designed to be simple to use yet challenging.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## How to play
 
-## Creating the Heroku app
+Hangman is originally a game drawn on a peice of paper with 2 or more players with 1 of the players choosing the word in question and drawing the hangman when the letters are guessed wrong. In this version, however, the computer programme is the player picking the word and drawing the hangman while the user is trying to guess what that word is. 
+The instructions can be found for this page on option 2 of the title page.
+When the user chooses to start the game a word to be guessed is randomly chosen from a list of words stored in the programme and will be displayed as "_ _ _ _ _ _" along with the amount of lives they have.
+The user is also prompted to enter a letter. If they guess it right the letter is added to the hidden word wherever it is supposed to be, for example "_ _ e _ _ d _ e" until the word is complete. If they guess any letters wrong then any lives will automatically be deducted and an image of a hangmam at different stages depending on the number of incorrect guesses.
+This process continues until either the user guesses the word correct before running out of lives and the winning screen 
+appears or being directed the losing screen if they run out of lives before they guess the word.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## User Experience(UX)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### User Goals.
+      - As a User, I want to easily navigate through the game with simple inputs
+      - As a User, I want to understand how to play they game
+      - As a User, I want to have fun and enjoy the game
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
