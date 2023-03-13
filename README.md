@@ -18,10 +18,21 @@ This process continues until either the user guesses the word correct before run
 appears or being directed the losing screen if they run out of lives before they guess the word.
 
 ## User Experience(UX)
+### Stratergy
 
-### User Goals.
+#### Target Audience
+      - All ages
+      - All levels
+      - English Speakers
+
+#### User Goals.
       - As a User, I want to easily navigate through the game with simple inputs
       - As a User, I want to understand how to play they game
       - As a User, I want to have fun and enjoy the game
+
+#### Objectives
+      - Provide a fully functions and smooth running game
+      - Make the game fun, quick, yet challenging
+      - Ensure the game is easy and intuitive to use
 
 
