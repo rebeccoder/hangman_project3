@@ -54,3 +54,5 @@ The user only needs to enter single characters followed by the Enter key.
 Here is a logic flow chart I made for the hangman game.
 I created this to have a visual plan of the game cycle.
 I wanted to make sure that I was creating a game that you didn't have to leave the terminal to keep playing as many rounds as you want to play. The user shouldn't even have to move their mouse as everything has been programmed into the keys. This chart shows how this programme should keep flowing.
+
+![Flow Chart](assets/images/hangman_flowchart.jpg)
