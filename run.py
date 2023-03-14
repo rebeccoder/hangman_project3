@@ -37,14 +37,14 @@ def title_page():
     print("Type 3: To Exit")
 
     while True:
-        title_page_option = input("Please Choose Option 1,2 or 3 and Press Enter: ")
-        if title_page_option == "1":
+        title_option = input("Please Choose Option 1,2 or 3 and Press Enter: ")
+        if title_option == "1":
             play(word)
             break
-        elif title_page_option == "2":
+        elif title_option == "2":
             instructions_page()
             continue
-        elif title_page_option == "3":
+        elif title_option == "3":
             clear_terminal()
             sys.exit()
             break
