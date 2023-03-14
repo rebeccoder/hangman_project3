@@ -95,7 +95,8 @@ def play_again():
 
 def play(word):
     """
-    Starts the game, displays the secret word, the picture of the hangman and amount of lives.
+    Starts the game, displays the secret word,
+    the picture of the hangman and amount of lives.
     """
     clear_terminal()
     secret_word = "_" * len(word)
@@ -108,7 +109,7 @@ def play(word):
     print("Guess this word: " + " ".join(secret_word) + "\n")
     print("\n")
     """
-    Promts for the user to input a letter and returns whether 
+    Promts for the user to input a letter and returns whether
     the letter is in the word or not, if it is then it adds the letter
     to the word, if the word is completed then the winning/losing message is shown
     """
@@ -182,7 +183,7 @@ def display_hangman(lives):
                    |      O
                    |     \\|/
                    |      |
-                   |     / 
+                   |     /
                    -
                 """,
         # head, torso, and both arms
@@ -192,7 +193,7 @@ def display_hangman(lives):
                    |      O
                    |     \\|/
                    |      |
-                   |      
+                   |
                    -
                 """,
         # head, torso, and one arm
@@ -202,7 +203,7 @@ def display_hangman(lives):
                    |      O
                    |     \\|
                    |      |
-                   |     
+                   |
                    -
                 """,
         # head and torso
@@ -212,7 +213,7 @@ def display_hangman(lives):
                    |      O
                    |      |
                    |      |
-                   |     
+                   |
                    -
                 """,
         # head
@@ -220,19 +221,19 @@ def display_hangman(lives):
                    --------
                    |      |
                    |      O
-                   |    
-                   |      
-                   |     
+                   |
+                   |
+                   |
                    -
                 """,
         # initial empty state
         """
                    --------
                    |      |
-                   |      
-                   |    
-                   |      
-                   |     
+                   |
+                   |
+                   |
+                   |
                    -
                 """,
     ]
@@ -242,10 +243,10 @@ def display_hangman(lives):
 def dancing_stickman():
     print(
         """
-                        7_O_/           
-                         (/ 
-                         /\/' 
-                         7   
+                        7_O_/
+                         (/
+                         /\ /'
+                         7
     """
     )
 
@@ -253,14 +254,13 @@ def dancing_stickman():
 def title_art():
     # ANSI code for bright green
     print(
-        """\033[1;32m 
- 
+        """\033[1;32m
 ██╗░░██╗░█████╗░███╗░░██╗░██████╗░███╗░░░███╗░█████╗░███╗░░██╗
 ██║░░██║██╔══██╗████╗░██║██╔════╝░████╗░████║██╔══██╗████╗░██║
 ███████║███████║██╔██╗██║██║░░██╗░██╔████╔██║███████║██╔██╗██║
 ██╔══██║██╔══██║██║╚████║██║░░╚██╗██║╚██╔╝██║██╔══██║██║╚████║
 ██║░░██║██║░░██║██║░╚███║╚██████╔╝██║░╚═╝░██║██║░░██║██║░╚███║
-╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝ 
+╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝
  """
     )
 
@@ -282,13 +282,12 @@ def winner_art():
 def game_over_art():
     print(
         """
-
 ░██████╗░░█████╗░███╗░░░███╗███████╗  ░█████╗░██╗░░░██╗███████╗██████╗░
 ██╔════╝░██╔══██╗████╗░████║██╔════╝  ██╔══██╗██║░░░██║██╔════╝██╔══██╗
 ██║░░██╗░███████║██╔████╔██║█████╗░░  ██║░░██║╚██╗░██╔╝█████╗░░██████╔╝
 ██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░  ██║░░██║░╚████╔╝░██╔══╝░░██╔══██╗
 ╚██████╔╝██║░░██║██║░╚═╝░██║███████╗  ╚█████╔╝░░╚██╔╝░░███████╗██║░░██║
-░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝                                           
+░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝
     """
     )
 
@@ -296,7 +295,6 @@ def game_over_art():
 def instructions_art():
     print(
         """
-    
 █ █▄░█ █▀ ▀█▀ █▀█ █░█ █▀▀ ▀█▀ █ █▀█ █▄░█ █▀
 █ █░▀█ ▄█ ░█░ █▀▄ █▄█ █▄▄ ░█░ █ █▄█ █░▀█ ▄█
     """
