@@ -111,7 +111,8 @@ def play(word):
     """
     Promts for the user to input a letter and returns whether
     the letter is in the word or not, if it is then it adds the letter
-    to the word, if the word is completed then the winning/losing message is shown
+    to the word,
+    if the word is completed then the winning/losing message is shown
     """
     while not end_game and lives > 0:
         guess = input("Please type a letter and then press enter: ").upper()
@@ -122,8 +123,8 @@ def play(word):
                 print(f"{guess} is in the word! Well done!")
                 guessed_letters.append(guess)
                 word_as_list = list(secret_word)
-                indices = [i for i, letter in enumerate(word) if letter == guess]
-                for index in indices:
+                ind = [i for i, letter in enumerate(word) if letter == guess]
+                for index in ind:
                     word_as_list[index] = guess
                 secret_word = "".join(word_as_list)
                 if "_" not in secret_word:
@@ -135,7 +136,8 @@ def play(word):
 
         elif len(guess) != 1:
             print(
-                f"You entered {len(guess)} letters.. You can only enter 1 letter at a time!"
+                f"You entered {len(guess)} letters.. "
+                "You can only enter 1 letter at a time!"
             )
         else:
             print(f"{guess} is an invalid answer. Try again.")
@@ -148,7 +150,8 @@ def play(word):
         dancing_stickman()
         winner_art()
         print(
-            f"Congratulaions! You won! You guessed the word {word} and saved that man!"
+            "Congratulaions! You won!"
+            f"You guessed the word {word} and saved that man!"
         )
         play_again()
 
@@ -156,7 +159,8 @@ def play(word):
         clear_terminal()
         print(display_hangman(0))
         game_over_art()
-        print("Uh Oh! You lost! Wouldn't want to be that guy... Better luck next time!")
+        print("Uh Oh! You lost! Wouldn't want to be that guy..."
+              "Better luck next time!")
         print(f"The word you were looking for was: {word}")
         play_again()
 
