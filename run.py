@@ -2,26 +2,30 @@ import random
 import sys
 import os
 
+
 def clear_terminal():
     """
     Clears the terminal and code sourced from:
     http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf
     """
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
+
 
 def new_word():
     """
     Randomly selects a word from words.txt file for each round
     """
-    with open('words.txt', 'r') as h:
+    with open("words.txt", "r") as h:
         words = h.readlines()
     random_word = random.choice(words)[:-1].upper()
     return random_word
 
+
 word = new_word()
 
+
 def title_page():
-    """ 
+    """
     Introduces the player to the game.
     Gives them 3 options, to start the game, read instructions or exit
     """
@@ -48,8 +52,9 @@ def title_page():
             print("Please Choose Option 1, 2 or 3")
             break
 
+
 def instructions_page():
-    """ 
+    """
     Displays instructions for the user to understand the game
     """
     clear_terminal()
@@ -70,6 +75,7 @@ def instructions_page():
     start = input("Press the enter key to return to the title page.\n")
     title_page()
 
+
 def play_again():
     """
     This function is called at the end of the game to see
@@ -77,11 +83,11 @@ def play_again():
     """
     while True:
         play_again_answer = input("Play Again? (Y/N): ")
-        if play_again_answer.upper() == 'Y':
+        if play_again_answer.upper() == "Y":
             clear_terminal()
             word = new_word()
             play(word)
-        elif play_again_answer.upper() == 'N':
+        elif play_again_answer.upper() == "N":
             title_page()
         else:
             continue
@@ -127,7 +133,9 @@ def play(word):
                 guessed_letters.append(guess)
 
         elif len(guess) != 1:
-            print(f"You entered {len(guess)} letters.. You can only enter 1 letter at a time!")
+            print(
+                f"You entered {len(guess)} letters.. You can only enter 1 letter at a time!"
+            )
         else:
             print(f"{guess} is an invalid answer. Try again.")
         print(display_hangman(lives))
@@ -138,7 +146,9 @@ def play(word):
         clear_terminal()
         dancing_stickman()
         winner_art()
-        print ( f"Congratulaions! You won! You guessed the word {word} and saved that man!")
+        print(
+            f"Congratulaions! You won! You guessed the word {word} and saved that man!"
+        )
         play_again()
 
     else:
@@ -148,7 +158,7 @@ def play(word):
         print("Uh Oh! You lost! Wouldn't want to be that guy... Better luck next time!")
         print(f"The word you were looking for was: {word}")
         play_again()
-    
+
 
 def display_hangman(lives):
     """
@@ -156,7 +166,7 @@ def display_hangman(lives):
     Displays the hangman lives visual representation for the user
     """
     stages = [  # final state: head, torso, both arms, and both legs
-                """
+        """
                    --------
                    |      |
                    |      O
@@ -165,8 +175,8 @@ def display_hangman(lives):
                    |     / \\
                    -
                 """,
-                # head, torso, both arms, and one leg
-                """
+        # head, torso, both arms, and one leg
+        """
                    --------
                    |      |
                    |      O
@@ -175,8 +185,8 @@ def display_hangman(lives):
                    |     / 
                    -
                 """,
-                # head, torso, and both arms
-                """
+        # head, torso, and both arms
+        """
                    --------
                    |      |
                    |      O
@@ -185,8 +195,8 @@ def display_hangman(lives):
                    |      
                    -
                 """,
-                # head, torso, and one arm
-                """
+        # head, torso, and one arm
+        """
                    --------
                    |      |
                    |      O
@@ -195,8 +205,8 @@ def display_hangman(lives):
                    |     
                    -
                 """,
-                # head and torso
-                """
+        # head and torso
+        """
                    --------
                    |      |
                    |      O
@@ -205,8 +215,8 @@ def display_hangman(lives):
                    |     
                    -
                 """,
-                # head
-                """
+        # head
+        """
                    --------
                    |      |
                    |      O
@@ -215,8 +225,8 @@ def display_hangman(lives):
                    |     
                    -
                 """,
-                # initial empty state
-                """
+        # initial empty state
+        """
                    --------
                    |      |
                    |      
@@ -224,21 +234,26 @@ def display_hangman(lives):
                    |      
                    |     
                    -
-                """
+                """,
     ]
     return stages[lives]
 
+
 def dancing_stickman():
-    print("""
+    print(
+        """
                         7_O_/           
                          (/ 
                          /\/' 
                          7   
-    """)
+    """
+    )
+
 
 def title_art():
-    #ANSI code for bright green
-    print("""\033[1;32m 
+    # ANSI code for bright green
+    print(
+        """\033[1;32m 
  
 ██╗░░██╗░█████╗░███╗░░██╗░██████╗░███╗░░░███╗░█████╗░███╗░░██╗
 ██║░░██║██╔══██╗████╗░██║██╔════╝░████╗░████║██╔══██╗████╗░██║
@@ -246,11 +261,13 @@ def title_art():
 ██╔══██║██╔══██║██║╚████║██║░░╚██╗██║╚██╔╝██║██╔══██║██║╚████║
 ██║░░██║██║░░██║██║░╚███║╚██████╔╝██║░╚═╝░██║██║░░██║██║░╚███║
 ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝ 
- """)
+ """
+    )
 
 
 def winner_art():
-    print("""
+    print(
+        """
 
 ░██╗░░░░░░░██╗██╗███╗░░██╗███╗░░██╗███████╗██████╗░
 ░██║░░██╗░░██║██║████╗░██║████╗░██║██╔════╝██╔══██╗
@@ -258,10 +275,13 @@ def winner_art():
 ░░████╔═████║░██║██║╚████║██║╚████║██╔══╝░░██╔══██╗
 ░░╚██╔╝░╚██╔╝░██║██║░╚███║██║░╚███║███████╗██║░░██║
 ░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝░░╚══╝╚══════╝╚═╝░░╚═╝
-    """)
+    """
+    )
+
 
 def game_over_art():
-    print("""
+    print(
+        """
 
 ░██████╗░░█████╗░███╗░░░███╗███████╗  ░█████╗░██╗░░░██╗███████╗██████╗░
 ██╔════╝░██╔══██╗████╗░████║██╔════╝  ██╔══██╗██║░░░██║██╔════╝██╔══██╗
@@ -269,13 +289,18 @@ def game_over_art():
 ██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░  ██║░░██║░╚████╔╝░██╔══╝░░██╔══██╗
 ╚██████╔╝██║░░██║██║░╚═╝░██║███████╗  ╚█████╔╝░░╚██╔╝░░███████╗██║░░██║
 ░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝                                           
-    """)
+    """
+    )
+
 
 def instructions_art():
-    print("""
+    print(
+        """
     
 █ █▄░█ █▀ ▀█▀ █▀█ █░█ █▀▀ ▀█▀ █ █▀█ █▄░█ █▀
 █ █░▀█ ▄█ ░█░ █▀▄ █▄█ █▄▄ ░█░ █ █▄█ █░▀█ ▄█
-    """)
+    """
+    )
+
 
 title_page()
