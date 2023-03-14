@@ -53,6 +53,18 @@ The user only needs to enter single characters followed by the Enter key.
 
 Here is a logic flow chart I made for the hangman game.
 I created this to have a visual plan of the game cycle.
-I wanted to make sure that I was creating a game that you didn't have to leave the terminal to keep playing as many rounds as you want to play. The user shouldn't even have to move their mouse as everything has been programmed into the keys. This chart shows how this programme should keep flowing.
+I wanted to make sure that I was creating a game that you didn't have to leave the terminal to keep playing as many rounds as you want. The user shouldn't even have to move their mouse as everything has been programmed into the keys. This chart shows how this programme should keep flowing.
 
 ![Flow Chart](assets/images/hangman_flowchart.jpg)
+
+
+### Surface
+
+The goal of this project was to make a Python programme that is intireley based in the terminal. This means that I was not able to use HTML, CSS and Javascript except for the basic JS that was in the Code Institute template that I used to build the programme off of. 
+This means that all the design had to be based in the terminal. This limited the options for making teh application look visably pleasing. I did however find a few ways to make the app more aesthetic by using ASCII art and changing the colour of the text to green. I chose green because of traditional green code on black backgrounds in movies such as the Matrix and other films realting to hackers and coding. 
+
+#### The hangman:
+
+![The hangman](assets/images/hangman_graphic.jpg)
+
+
