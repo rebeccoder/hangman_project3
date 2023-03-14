@@ -1,5 +1,7 @@
 # HANGMAN
 
+## Table of Contents
+
 ## Introduction
 
 For my 3rd Portfolio Project for the Code Institute I have chosen to make a classic Hangman game.
@@ -68,3 +70,10 @@ This means that all the design had to be based in the terminal. This limited the
 ![The hangman](assets/images/hangman_graphic.jpg)
 
 
+## Testing
+
+## Technologies Used
+
+## Deployment
+
+## Credits and References
