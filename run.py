@@ -67,7 +67,7 @@ def instructions_page():
         Every letter you get wrong will cost you one of your six lives
         and the hanging will commence.
         Once you run out of life the poor man will be hanged!
-        Only you can save him by guesing the right word before your lives reach 0.
+        Only you can save him by guessing the word before your lives reach 0.
         GOOD LUCK!
         """
     )
